@@ -1,5 +1,7 @@
 <?php
 
+// Salva uma compra
+
 if(isset($_POST['submit'])) {
 
     include_once('servidor.php');
@@ -17,5 +19,12 @@ if(isset($_POST['submit'])) {
 
     $update = "UPDATE produto SET quantidade = quantidade - $quantidade WHERE idproduto = '$id_produto'";
     $resultUpdate = mysqli_query($conn, $update);
+
+    if($result) {
+        echo "<script type='text/javascript'>
+                alert('Compra registrada com sucesso!');
+                window.location.href='index.php';
+              </script>";
+    }
 
 }

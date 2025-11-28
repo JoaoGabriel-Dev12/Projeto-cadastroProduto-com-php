@@ -113,6 +113,8 @@
                     <?php
 
                         include_once('servidor.php');
+                        
+                        // Exibe o cada cliente com o total de sua compra
 
                         $sql = "SELECT c.nome AS cliente, SUM(p.preco * co.quantidade) AS total
                         FROM  compra co
